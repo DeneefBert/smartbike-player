@@ -28,7 +28,7 @@ async function onYouTubeIframeAPIReady() {
     },
   });
   await sleep(1000);
-  console.log("playing")
+  console.log("playing");
   player.playVideo();
 }
 
