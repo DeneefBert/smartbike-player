@@ -148,3 +148,7 @@ function formatTime(time) {
 $("pre code").each(function (i, block) {
   hljs.highlightBlock(block);
 });
+
+function testingCs(test) {
+  return test + 1;
+};
