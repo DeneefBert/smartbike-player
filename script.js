@@ -11,9 +11,6 @@ if (urlParams.has("id")) {
 if (urlParams.has("playlistid")) {
   playlistid = urlParams.get("playlistid");
 }
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 async function onYouTubeIframeAPIReady() {
   player = new YT.Player("video-placeholder", {
@@ -27,9 +24,6 @@ async function onYouTubeIframeAPIReady() {
       onReady: initialize,
     },
   });
-  await sleep(1000);
-  console.log("playing");
-  player.playVideo();
 }
 
 function initialize() {
