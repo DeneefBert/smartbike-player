@@ -18,8 +18,11 @@ body {
 }
 
 #game{
-    width: 99%;
-    height: 99%;
+    width: 800px;
+    height: 700px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
     margin: auto;
     overflow: hidden;
     position: absolute;
@@ -29,10 +32,10 @@ body {
 #character {
     width: 100px;
     height: 100px;
-    top: 69%;
-    left: 34%;
+    top: 490px;
+    left: 5px;
     position: absolute;
-    overflow: hidden;
+
 }
 
 @keyframes block{
@@ -41,8 +44,8 @@ body {
 }
 
 #animal {
-    top: 71.7%;
-    left: 63%;
+    top: 511px;
+    left: 86.2%;
     width: 100px;
     height: 100px;
     position: relative;

@@ -28,7 +28,7 @@ let levelcount = 0;
 
 setInterval(function () {
 
-    let speed = 30;
+    let speed = 20;
 
     //Gigachad
     var characterLeft = parseInt(getComputedStyle(character).getPropertyValue("left"));
@@ -50,8 +50,13 @@ setInterval(function () {
     }
 
     if (speed < 20 + (levelcount * 3)) {
-        character.style.left = (characterLeft + (speed - 20)) + "px";
-        characterLeft = (characterLeft + (speed - 20));
+        if (characterLeft <= 5){
+            character.style.left = 5;
+        }
+        else {
+            character.style.left = (characterLeft + (speed - 20)) + "px";
+            characterLeft = (characterLeft + (speed - 20));
+        }    
     }
 
     //herkent het aantal px niet
@@ -115,11 +120,11 @@ class Layer {
     }
 }
 
-const layer1 = new Layer(backgroundLayer1, 0.5);
-const layer2 = new Layer(backgroundLayer2, 0.5);
+const layer1 = new Layer(backgroundLayer1, 0);
+const layer2 = new Layer(backgroundLayer2, 0.4);
 const layer3 = new Layer(backgroundLayer3, 0.5);
-const layer4 = new Layer(backgroundLayer4, 0.5);
-const layer5 = new Layer(backgroundLayer5, 1);
+const layer4 = new Layer(backgroundLayer4, 0.8);
+const layer5 = new Layer(backgroundLayer5, 1.1);
 
 const gameObjects = [layer1, layer2, layer3, layer4, layer5];
 
