@@ -19,6 +19,7 @@ async function onYouTubeIframeAPIReady() {
     videoId: id,
     playerVars: {
       color: "white",
+      playlist: playlistid,
     },
     events: {
       onReady: initialize,
