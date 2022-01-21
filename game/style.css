@@ -29,7 +29,7 @@ body {
 #character {
     width: 100px;
     height: 100px;
-    top: 62.8%;
+    top: 69%;
     left: 34%;
     position: absolute;
     overflow: hidden;
@@ -41,7 +41,7 @@ body {
 }
 
 #animal {
-    top: 65.7%;
+    top: 71.7%;
     left: 63%;
     width: 100px;
     height: 100px;
