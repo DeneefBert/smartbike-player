@@ -8,8 +8,10 @@
 
 
 #video-placeholder{
-    max-width: 35%;
-    width: 100%;
+    /* max-width: 35%;
+    width: 100%; */
+    height: 100vh;
+    width: 100vw;
 }
 
 #controls{
