@@ -4,8 +4,10 @@ const CANVAS_WIDTH = canvas.width = 800;
 const CANVAS_HEIGHT = canvas.height = 700;
 
 let gameSpeed = 2;
+let randomIndex = 0;
 
-const animals = ["img/icons/test_dog.gif", "img/icons/cat_test.gif"]
+const animals = ["img/icons/test_dog.gif", "img/icons/cat_test.gif"];
+const animalTops = [511, 547];
 
 const backgroundLayer1 = new Image();
 backgroundLayer1.src = 'img/layers/layer-1.png';
@@ -28,7 +30,7 @@ let levelcount = 0;
 
 setInterval(function () {
 
-    let speed = 23;
+    let speed = 35;
 
     //Gigachad
     var characterLeft = parseInt(getComputedStyle(character).getPropertyValue("left"));
@@ -78,7 +80,9 @@ setInterval(function () {
         levelcount++;
         alert("completed level " + levelcount);
         character.style.left = characterLeftStart + "px";
-        animalImage.src = animals[Math.floor(Math.random() * animals.length)];
+        randomIndex = Math.floor(Math.random() * animals.length);
+        animalImage.src = animals[randomIndex];
+        animal.style.top = animalTops[randomIndex] + "px";
         
     } else {
         //no collision
