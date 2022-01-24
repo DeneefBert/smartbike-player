@@ -30,7 +30,7 @@ let levelcount = 0;
 
 setInterval(function () {
 
-    let speed = 35;
+    let speed = 27;
 
     //Gigachad
     var characterLeft = parseInt(getComputedStyle(character).getPropertyValue("left"));
