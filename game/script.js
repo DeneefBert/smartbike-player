@@ -7,6 +7,7 @@ let gameSpeed = 2;
 let randomIndex = 0;
 let levelcount = 1;
 let characterReset = false;
+let speed = 20;
 
 const animals = ["img/icons/test_dog.gif", "img/icons/cat_test.gif"];
 const animalTops = [511, 547];
@@ -28,8 +29,6 @@ var title = document.getElementById("title");
 var characterLeftStart = parseInt(getComputedStyle(character).getPropertyValue("left"));
 
 setInterval(function () {
-
-    let speed = 27;
 
     //Gigachad
     var characterLeft = parseInt(getComputedStyle(character).getPropertyValue("left"));
@@ -87,6 +86,10 @@ setInterval(function () {
         //no collision
     }
 }, 100);
+
+function getSpeed(sensorSpeed) {
+    speed = Math.round(sensorSpeed, 0);
+}
 
 /* code used for the background, this is displayed in a canvas */
 
