@@ -7,6 +7,20 @@ body {
     margin: 0;
 }
 
+h1 {
+    font-family: Nunito;
+    position: absolute;
+    font-size: medium;
+    color: white;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 20px;
+    text-align: center;
+}
+
 #canvas1 {
     position: absolute;
     border:  3px solid white;
@@ -35,7 +49,6 @@ body {
     top: 490px;
     left: 5px;
     position: absolute;
-
 }
 
 @keyframes block{

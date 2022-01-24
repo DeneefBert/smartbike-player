@@ -5,6 +5,8 @@ const CANVAS_HEIGHT = canvas.height = 700;
 
 let gameSpeed = 2;
 let randomIndex = 0;
+let levelcount = 1;
+let characterReset = false;
 
 const animals = ["img/icons/test_dog.gif", "img/icons/cat_test.gif"];
 const animalTops = [511, 547];
@@ -22,11 +24,8 @@ backgroundLayer5.src = 'img/layers/layer-5.png';
 
 var character = document.getElementById("character");
 var animal = document.getElementById("animal");
+var title = document.getElementById("title");
 var characterLeftStart = parseInt(getComputedStyle(character).getPropertyValue("left"));
-
-let characterReset = false;
-
-let levelcount = 0;
 
 setInterval(function () {
 
@@ -78,7 +77,7 @@ setInterval(function () {
     {
         //collision detected
         levelcount++;
-        alert("completed level " + levelcount);
+        title.innerHTML = "Level " + levelcount;
         character.style.left = characterLeftStart + "px";
         randomIndex = Math.floor(Math.random() * animals.length);
         animalImage.src = animals[randomIndex];
@@ -121,7 +120,7 @@ class Layer {
     }
 }
 
-const layer1 = new Layer(backgroundLayer1, 0);
+const layer1 = new Layer(backgroundLayer1, 0.1);
 const layer2 = new Layer(backgroundLayer2, 0.4);
 const layer3 = new Layer(backgroundLayer3, 0.5);
 const layer4 = new Layer(backgroundLayer4, 0.8);
