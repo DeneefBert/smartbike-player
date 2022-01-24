@@ -28,7 +28,7 @@ let levelcount = 0;
 
 setInterval(function () {
 
-    let speed = 20;
+    let speed = 23;
 
     //Gigachad
     var characterLeft = parseInt(getComputedStyle(character).getPropertyValue("left"));
@@ -75,7 +75,6 @@ setInterval(function () {
         characterY + characterHeight > dogY) 
     {
         //collision detected
-        console.log("collision");
         levelcount++;
         alert("completed level " + levelcount);
         character.style.left = characterLeftStart + "px";
@@ -83,10 +82,8 @@ setInterval(function () {
         
     } else {
         //no collision
-        console.log("geen collision");
     }
 }, 100);
-
 
 /* code used for the background, this is displayed in a canvas */
 
