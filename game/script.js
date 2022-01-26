@@ -7,7 +7,7 @@ let gameSpeed = 2;
 let randomIndex = 0;
 let levelcount = 1;
 let characterReset = false;
-let speed = 10;
+let speed = 15;
 
 const animals = ["img/icons/test_dog.gif", "img/icons/cat_test.gif"];
 const animalTops = [511, 547];
@@ -44,12 +44,12 @@ setInterval(function () {
     var animalImage = document.getElementById("animalImage");
 
     //speed diff
-    if (speed > 20 + (levelcount * 1)) {
-        character.style.left = (characterLeft + (speed - 20)) + "px";
-        characterLeft = (characterLeft + (speed - 20));
+    if (speed > 10 + (levelcount)) {
+        character.style.left = (characterLeft + (speed - 10)) + "px";
+        characterLeft = (characterLeft + (speed - 10));
     }
 
-    if (speed < 20 + (levelcount * 1)) {
+    if (speed < 10 + (levelcount)) {
         if (characterLeft <= 5){
             character.style.left = 5;
         }
