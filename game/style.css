@@ -24,7 +24,7 @@ h1 {
 #canvas1 {
     position: absolute;
     border:  3px solid white;
-    width: 1050px;
+    width: 800px;
     height: 700px;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -32,7 +32,7 @@ h1 {
 }
 
 #game{
-    width: 1050px;
+    width: 800px;
     height: 700px;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -68,4 +68,39 @@ img {
     max-width: 100%;
     max-height: 100%;
 }
+
+/* --- allocationg labels to their place */
+
+#countdown {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    color: white;
+    margin-left: 1%;
+    margin-right: 99%;
+    width: 60px;
+    top: 10px;
+}
+
+#levelspeed {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 75px;
+    text-align: center;
+}
+
+#cyclingspeed {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    color: white;
+    margin-left: 92%;
+    margin-right: 8%;
+    width: 60px;
+    top: 10px;
+}
+
 

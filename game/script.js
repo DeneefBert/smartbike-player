@@ -1,7 +1,14 @@
 // --- get html elements
 var character = document.getElementById("character");
 var animal = document.getElementById("animal");
+
+// --- get information labels
 var title = document.getElementById("title");
+var cyclingSpeed = document.getElementById("cyclingspeed");
+var levelSpeed = document.getElementById("levelspeed");
+var countdown = document.getElementById("countdown");
+
+// --- get start location of the character
 var characterLeftStart = parseInt(getComputedStyle(character).getPropertyValue("left"));
 
 // --- variables canvas element
@@ -15,13 +22,16 @@ let gameSpeed = 2;
 let randomIndex = 0;
 let levelcount = 1;
 let characterReset = false;
+let counter = 10;
+
 let speed = 15;
+cyclingSpeed.innerHTML = speed + " km/u";
 
 // --- array animals
 const animals = ["img/icons/test_dog.gif", "img/icons/cat_test.gif"];
 const animalTops = [511, 547];
 
-// --- set layers of canvas
+// --- set layers of canvas (the moving background)
 const backgroundLayer1 = new Image();
 backgroundLayer1.src = 'img/layers/layer-1.png';
 const backgroundLayer2 = new Image();
@@ -35,14 +45,13 @@ backgroundLayer5.src = 'img/layers/layer-5.png';
 
 
 setInterval(function () {
-
-    // --- get values of the characters
+    // --- get location values of character
     var characterLeft = parseInt(getComputedStyle(character).getPropertyValue("left"));
     var characterWidth = parseInt(getComputedStyle(character).getPropertyValue("width"));
     var characterHeight = parseInt(getComputedStyle(character).getPropertyValue("height"));
     var characterY = parseInt(getComputedStyle(character).getPropertyValue("top"));
 
-    // --- get values of the animal (dog is the default animal)
+    // --- get location values of the animal (dog is the default animal)
     var dogLeft = parseInt(getComputedStyle(animal).getPropertyValue("left"));
     var dogWidth = parseInt(getComputedStyle(animal).getPropertyValue("width"));
     var dogHeight = parseInt(getComputedStyle(animal).getPropertyValue("height"));
@@ -72,19 +81,44 @@ setInterval(function () {
         // --- collision event + set next level event
         levelcount++;
         title.innerHTML = "Level " + levelcount;
+        levelSpeed.innerHTML = 10 + levelcount + " km/u";
         character.style.left = characterLeftStart + "px";
         randomIndex = Math.floor(Math.random() * animals.length);
         animalImage.src = animals[randomIndex];
         animal.style.top = animalTops[randomIndex] + "px";
-        
     }
    
     // --- when no if --> no collision
 }, 100);
 
+// --- check every second if character is at start point --> if true, game over
+setInterval(function () {
+    // --- get location of character
+    var characterLeft = parseInt(getComputedStyle(character).getPropertyValue("left"));
+
+    if (characterLeft == characterLeftStart){
+        counter--
+        countdown.innerHTML = counter;
+        if (counter == 0){
+            countdown.innerHTML = counter;
+            alert("GAME OVER");
+            levelcount = 1;
+            title.innerHTML = "Level " + levelcount;
+            randomIndex = Math.floor(Math.random() * animals.length);
+            animalImage.src = animals[randomIndex];
+            animal.style.top = animalTops[randomIndex] + "px";
+        }
+    }
+    else{
+        counter = 10;
+        countdown.innerHTML = counter;
+    }
+}, 1000);
+
 // --- get speed from c# and the sensor
 function getSpeed(sensorSpeed) {
     speed = Math.round(sensorSpeed, 0);
+    cyclingSpeed.innerHTML = speed + "km/u";
 }
 
 // --- code used for the background, this is displayed in a canvas
