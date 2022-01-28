@@ -23,6 +23,7 @@ let randomIndex = 0;
 let levelcount = 1;
 let characterReset = false;
 let counter = 10;
+let gameOver = false;
 
 let speed = 15;
 cyclingSpeed.innerHTML = speed + " km/u";
@@ -91,7 +92,7 @@ setInterval(function () {
     // --- when no if --> no collision
 }, 100);
 
-// --- check every second if character is at start point --> if true, game over
+// --- check every second if character is at start point --> if true for 10 seconds straight, game over
 setInterval(function () {
     // --- get location of character
     var characterLeft = parseInt(getComputedStyle(character).getPropertyValue("left"));
@@ -101,7 +102,7 @@ setInterval(function () {
         countdown.innerHTML = counter;
         if (counter == 0){
             countdown.innerHTML = counter;
-            alert("GAME OVER");
+            gameOver = true;
             levelcount = 1;
             title.innerHTML = "Level " + levelcount;
             randomIndex = Math.floor(Math.random() * animals.length);
